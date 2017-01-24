@@ -292,9 +292,7 @@ detailsitem.details-item-note label {
 }
 
 /* addressbook settings */
-
-
-ul.addressBookList li {
+ul.addressBookList > li {
 	padding: 6px 0;
 }
 
@@ -307,8 +305,19 @@ ul.addressBook-share-list li {
 	margin-left: 15px;
 }
 
+ul.addressBookList li .utils {
+	position: absolute;
+	right: 0;
+	padding-right: 11px;
+}
+ul.addressBookList li .utils .popovermenu {
+	margin-top: 0;
+}
 ul.addressBookList li .action > span {
-	padding: 10px 14px;
+	display: inline-block;
+	opacity: 0.5;
+	width: 24px;
+	height: 20px;
 }
 
 ul.addressBookList li .action > a {
@@ -332,12 +341,6 @@ div.addressBookShares ul.dropdown-menu li > a {
 
 ul.dropdown-menu li.active {
 	background: #eee;
-}
-
-div.app-contacts span.utils {
-	padding: 0 !important;
-	float: right;
-	position: relative !important;
 }
 
 input.newAddressBookInput, input.shareeInput, input.addressBookUrl {

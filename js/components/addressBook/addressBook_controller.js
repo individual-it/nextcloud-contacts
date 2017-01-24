@@ -5,15 +5,14 @@ angular.module('contactsApp')
 	ctrl.t = {
 		download: t('contacts', 'Download'),
 		showURL:t('contacts', 'ShowURL'),
-		shareAddressbook: t('contacts', 'Share Addressbook'),
-		deleteAddressbook: t('contacts', 'Delete Addressbook'),
+		shareAddressbook: t('contacts', 'Share'),
+		deleteAddressbook: t('contacts', 'Delete'),
 		shareInputPlaceHolder: t('contacts', 'Share with users or groups'),
 		delete: t('contacts', 'Delete'),
 		canEdit: t('contacts', 'can edit')
 	};
 
 	ctrl.showUrl = false;
-	/* globals oc_config */
 
 	function compareVersion(version1, version2) {
 		for (var i = 0; i < Math.max(version1.length, version2.length); i++) {
@@ -28,12 +27,23 @@ angular.module('contactsApp')
 		}
 		return false;
 	}
+	/* globals oc_config */
 	/* eslint-disable camelcase */
 	ctrl.canExport = compareVersion([9, 0, 2, 0], oc_config.version.split('.'));
 	/* eslint-enable camelcase */
 
 	ctrl.toggleShowUrl = function() {
 		ctrl.showUrl = !ctrl.showUrl;
+	};
+
+	ctrl.closeMenus = function() {
+		$scope.$parent.ctrl.openedMenu = false;
+	};
+
+	ctrl.openMenu = function(index) {
+		ctrl.closeMenus();
+		console.debug($scope);
+		$scope.$parent.ctrl.openedMenu = index;
 	};
 
 	ctrl.toggleSharesEditor = function() {
