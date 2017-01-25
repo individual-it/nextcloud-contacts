@@ -294,6 +294,7 @@ detailsitem.details-item-note label {
 /* addressbook settings */
 ul.addressBookList > li {
 	padding: 6px 0;
+	margin-bottom: 5px;
 }
 
 ul.addressBook-share-list {
@@ -478,10 +479,6 @@ li.addressBook-share-item span.shareeIdentifier {
 .app-content-list-item-line-two {
 	top: 25px;
 	opacity: .5;
-}
-
-ul.addressBookList > li {
-	margin-bottom: 5px;
 }
 
 ul.addressBook-share-list {
