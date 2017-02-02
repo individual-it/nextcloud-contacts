@@ -43,6 +43,6 @@ class PageControllerTest extends PHPUnit_Framework_TestCase {
 		$result = $this->controller->doEcho('hi');
 		$this->assertEquals(['echo' => 'hi'], $result->getData());
 	}
-
+//trigger travis 
 
 }
